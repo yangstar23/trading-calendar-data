@@ -1,0 +1,179 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-12T00:00:00Z",
+  "markets": {
+    "cn": {
+      "validFrom": "2026-01-01",
+      "confirmedThrough": "2026-12-31",
+      "weekdays": [1, 2, 3, 4, 5],
+      "source": "sse-rules",
+      "templates": {
+        "regular": [
+          { "kind": "openingAuction", "start": "09:15", "end": "09:30" },
+          { "kind": "continuous", "start": "09:30", "end": "11:30" },
+          { "kind": "continuous", "start": "13:00", "end": "14:57" },
+          { "kind": "closingAuction", "start": "14:57", "end": "15:00" }
+        ]
+      },
+      "exceptions": [
+        { "date": "2026-01-01", "through": "2026-01-03", "kind": "closed", "note": "元旦", "source": "sse-holidays-2026" },
+        { "date": "2026-02-15", "through": "2026-02-23", "kind": "closed", "note": "春节", "source": "sse-holidays-2026" },
+        { "date": "2026-04-04", "through": "2026-04-06", "kind": "closed", "note": "清明节", "source": "sse-holidays-2026" },
+        { "date": "2026-05-01", "through": "2026-05-05", "kind": "closed", "note": "劳动节", "source": "sse-holidays-2026" },
+        { "date": "2026-06-19", "through": "2026-06-21", "kind": "closed", "note": "端午节", "source": "sse-holidays-2026" },
+        { "date": "2026-09-25", "through": "2026-09-27", "kind": "closed", "note": "中秋节", "source": "sse-holidays-2026" },
+        { "date": "2026-10-01", "through": "2026-10-07", "kind": "closed", "note": "国庆假期", "source": "sse-holidays-2026" }
+      ]
+    },
+    "hk": {
+      "validFrom": "2026-01-01",
+      "confirmedThrough": "2027-01-31",
+      "weekdays": [1, 2, 3, 4, 5],
+      "source": "hkex-hours",
+      "templates": {
+        "regular": [
+          { "kind": "openingAuction", "start": "09:00", "end": "09:30" },
+          { "kind": "continuous", "start": "09:30", "end": "12:00" },
+          { "kind": "continuous", "start": "13:00", "end": "16:00" },
+          { "kind": "closingAuction", "start": "16:00", "end": "16:10", "randomEndFrom": "16:08" }
+        ],
+        "halfDay": [
+          { "kind": "openingAuction", "start": "09:00", "end": "09:30" },
+          { "kind": "continuous", "start": "09:30", "end": "12:00" },
+          { "kind": "closingAuction", "start": "12:00", "end": "12:10", "randomEndFrom": "12:08" }
+        ]
+      },
+      "exceptions": [
+        { "date": "2026-01-01", "kind": "closed", "note": "元旦", "source": "hk-holidays-2026" },
+        { "date": "2026-02-16", "kind": "shortened", "template": "halfDay", "note": "农历新年前夕", "source": "hkex-lny-2026" },
+        { "date": "2026-02-17", "through": "2026-02-19", "kind": "closed", "note": "农历新年", "source": "hk-holidays-2026" },
+        { "date": "2026-04-03", "kind": "closed", "note": "耶稣受难节", "source": "hk-holidays-2026" },
+        { "date": "2026-04-06", "kind": "closed", "note": "清明节翌日", "source": "hk-holidays-2026" },
+        { "date": "2026-04-07", "kind": "closed", "note": "复活节星期一翌日", "source": "hk-holidays-2026" },
+        { "date": "2026-05-01", "kind": "closed", "note": "劳动节", "source": "hk-holidays-2026" },
+        { "date": "2026-05-25", "kind": "closed", "note": "佛诞翌日", "source": "hk-holidays-2026" },
+        { "date": "2026-06-19", "kind": "closed", "note": "端午节", "source": "hk-holidays-2026" },
+        { "date": "2026-07-01", "kind": "closed", "note": "香港特区成立纪念日", "source": "hk-holidays-2026" },
+        { "date": "2026-10-01", "kind": "closed", "note": "国庆日" },
+        { "date": "2026-10-19", "kind": "closed", "note": "重阳节翌日" },
+        { "date": "2026-12-24", "kind": "shortened", "template": "halfDay", "note": "平安夜" },
+        { "date": "2026-12-25", "kind": "closed", "note": "圣诞节" },
+        { "date": "2026-12-31", "kind": "shortened", "template": "halfDay", "note": "新年前夕" },
+        { "date": "2027-01-01", "kind": "closed", "note": "元旦" }
+      ]
+    },
+    "us": {
+      "validFrom": "2026-01-01",
+      "confirmedThrough": "2027-01-31",
+      "weekdays": [1, 2, 3, 4, 5],
+      "source": "nyse-hours",
+      "templates": {
+        "regular": [
+          { "kind": "preMarket", "layer": "exchangeExtended", "start": "04:00", "end": "09:30" },
+          { "kind": "continuous", "start": "09:30", "end": "16:00" },
+          { "kind": "postMarket", "layer": "exchangeExtended", "start": "16:00", "end": "20:00" }
+        ],
+        "earlyClose": [
+          { "kind": "preMarket", "layer": "exchangeExtended", "start": "04:00", "end": "09:30" },
+          { "kind": "continuous", "start": "09:30", "end": "13:00" },
+          { "kind": "postMarket", "layer": "exchangeExtended", "start": "13:00", "end": "17:00" }
+        ]
+      },
+      "exceptions": [
+        { "date": "2026-01-01", "kind": "closed", "note": "元旦", "source": "nyse-holidays-2026" },
+        { "date": "2026-01-19", "kind": "closed", "note": "马丁·路德·金纪念日", "source": "nyse-holidays-2026" },
+        { "date": "2026-02-16", "kind": "closed", "note": "总统日", "source": "nyse-holidays-2026" },
+        { "date": "2026-04-03", "kind": "closed", "note": "耶稣受难日", "source": "nyse-holidays-2026" },
+        { "date": "2026-05-25", "kind": "closed", "note": "阵亡将士纪念日", "source": "nyse-holidays-2026" },
+        { "date": "2026-06-19", "kind": "closed", "note": "六月节", "source": "nyse-holidays-2026" },
+        { "date": "2026-07-03", "kind": "closed", "note": "独立日补休", "source": "nyse-holidays-2026" },
+        { "date": "2026-09-07", "kind": "closed", "note": "劳工节", "source": "nyse-holidays-2026" },
+        { "date": "2026-11-26", "kind": "closed", "note": "感恩节" },
+        { "date": "2026-11-27", "kind": "shortened", "template": "earlyClose", "note": "感恩节翌日" },
+        { "date": "2026-12-24", "kind": "shortened", "template": "earlyClose", "note": "平安夜" },
+        { "date": "2026-12-25", "kind": "closed", "note": "圣诞节" },
+        { "date": "2027-01-01", "kind": "closed", "note": "元旦" },
+        { "date": "2027-01-18", "kind": "closed", "note": "马丁·路德·金纪念日" }
+      ]
+    },
+    "kr": {
+      "validFrom": "2026-01-01",
+      "confirmedThrough": "2027-01-31",
+      "weekdays": [1, 2, 3, 4, 5],
+      "source": "krx-hours",
+      "templates": {
+        "regular": [
+          { "kind": "openingAuction", "start": "08:30", "end": "09:00" },
+          { "kind": "continuous", "start": "09:00", "end": "15:20" },
+          { "kind": "closingAuction", "start": "15:20", "end": "15:30" }
+        ],
+        "lateOpen": [
+          { "kind": "openingAuction", "start": "09:30", "end": "10:00" },
+          { "kind": "continuous", "start": "10:00", "end": "15:20" },
+          { "kind": "closingAuction", "start": "15:20", "end": "15:30" }
+        ],
+        "examDay": [
+          { "kind": "openingAuction", "start": "09:30", "end": "10:00" },
+          { "kind": "continuous", "start": "10:00", "end": "16:20" },
+          { "kind": "closingAuction", "start": "16:20", "end": "16:30" }
+        ]
+      },
+      "exceptions": [
+        { "date": "2026-01-01", "kind": "closed", "note": "元旦", "source": "krx-holidays-2026" },
+        { "date": "2026-01-02", "kind": "delayedOpen", "template": "lateOpen", "note": "新年首个交易日", "source": "krx-holidays-2026" },
+        { "date": "2026-02-16", "through": "2026-02-18", "kind": "closed", "note": "春节", "source": "krx-holidays-2026" },
+        { "date": "2026-03-02", "kind": "closed", "note": "三一节补假", "source": "krx-holidays-2026" },
+        { "date": "2026-05-01", "kind": "closed", "note": "劳动节", "source": "krx-holidays-2026" },
+        { "date": "2026-05-05", "kind": "closed", "note": "儿童节", "source": "krx-holidays-2026" },
+        { "date": "2026-05-25", "kind": "closed", "note": "佛诞补假", "source": "krx-holidays-2026" },
+        { "date": "2026-06-03", "kind": "closed", "note": "地方选举日", "source": "krx-election-2026" },
+        { "date": "2026-07-17", "kind": "closed", "note": "制宪节", "source": "krx-election-2026" },
+        { "date": "2026-08-17", "kind": "closed", "note": "光复节补假", "source": "krx-holidays-2026" },
+        { "date": "2026-09-24", "through": "2026-09-25", "kind": "closed", "note": "中秋节", "source": "krx-holidays-2026" },
+        { "date": "2026-10-05", "kind": "closed", "note": "开天节补假" },
+        { "date": "2026-10-09", "kind": "closed", "note": "韩文日" },
+        { "date": "2026-11-19", "kind": "delayedOpen", "template": "examDay", "note": "高考日", "source": "krx-exam-day" },
+        { "date": "2026-12-25", "kind": "closed", "note": "圣诞节" },
+        { "date": "2026-12-31", "kind": "closed", "note": "年末休市" },
+        { "date": "2027-01-01", "kind": "closed", "note": "元旦" },
+        { "date": "2027-01-04", "kind": "delayedOpen", "template": "lateOpen", "note": "新年首个交易日" }
+      ]
+    }
+  },
+  "channels": {
+    "southbound": {
+      "validFrom": "2026-01-01",
+      "confirmedThrough": "2026-12-31",
+      "source": "sse-hksc-2026",
+      "exceptions": [
+        { "date": "2026-12-24", "availability": "morningOnly", "note": "平安夜下午暂停" },
+        { "date": "2026-12-31", "availability": "morningOnly", "note": "年末下午暂停" }
+      ]
+    },
+    "northbound": {
+      "validFrom": "2026-01-01",
+      "confirmedThrough": "2026-12-31",
+      "source": "hkex-connect",
+      "exceptions": []
+    }
+  },
+  "plannedChanges": [
+    { "market": "us", "title": "纳斯达克拟新增夜间交易时段（23/5）", "expectedFrom": "2026-12-06", "status": "待监管批准和行情系统就绪", "source": "nasdaq-23-5" }
+  ],
+  "sources": {
+    "sse-rules": { "title": "上海证券交易所交易规则", "url": "https://www.sse.com.cn/lawandrules/sselawsrules/trade/" },
+    "sse-holidays-2026": { "title": "上交所 2026 年部分节假日休市安排", "url": "https://www.sse.com.cn/disclosure/announcement/general/c/c_20251222_10802507.shtml" },
+    "hk-holidays-2026": { "title": "香港特区政府 2026 年公众假期", "url": "https://www.gov.hk/tc/about/abouthk/holiday/2026.htm" },
+    "hkex-lny-2026": { "title": "港交所 2026 年农历新年前夕半日市通告", "url": "https://www.hkex.com.hk/-/media/HKEX-Market/Services/Circulars-and-Notices/Participant-and-Members-Circulars/HKFE/2025/MO_DT_264_25_c.pdf" },
+    "nyse-holidays-2026": { "title": "NYSE 2026–2028 年假期与提前收盘日历", "url": "https://ir.theice.com/press/news-details/2025/NYSE-Group-Announces-2026-2027-and-2028-Holiday-and-Early-Closings-Calendar/" },
+    "krx-holidays-2026": { "title": "韩国交易所 2026 年休市日与首个交易日开盘时间", "url": "https://www.hankyung.com/article/2025121825891" },
+    "krx-election-2026": { "title": "韩国交易所：6月3日地方选举日、7月17日制宪节休市", "url": "https://news.bizwatch.co.kr/article/market/2026/05/20/0023" },
+    "sse-hksc-2026": { "title": "上交所 2026 年港股通交易日安排", "url": "https://www.sse.com.cn/services/hkexsc/disclo/announ/c/c_20251222_10802519.shtml" },
+    "hkex-hours": { "title": "港交所交易时段", "url": "https://www.hkex.com.hk/Services/Trading-hours-and-Severe-Weather-Arrangements/Trading-Hours/Securities-Market" },
+    "hkex-connect": { "title": "港交所互联互通交易日历", "url": "https://www.hkex.com.hk/Mutual-Market/Stock-Connect" },
+    "nyse-hours": { "title": "纽交所交易时间与假期", "url": "https://www.nyse.com/markets/hours-calendars" },
+    "nasdaq-23-5": { "title": "纳斯达克 23/5 交易", "url": "https://www.nasdaq.com/23-5-trading" },
+    "krx-hours": { "title": "韩国交易所交易时间", "url": "https://global.krx.co.kr" },
+    "krx-exam-day": { "title": "高考日韩国股市延后 1 小时开收盘（2025 年先例）", "url": "https://www.heraldk.com/article/2025111215214040899" }
+  }
+}
